@@ -7,6 +7,7 @@ import {
 
 import Home from './containers/Home';
 import Design from './containers/Design';
+import Loading from './components/Loading'; // not sure if this ought to be a container
 import NavTab from './components/NavTab';
 import './stylesheets/main.scss';
 import jbeiLogo from './images/jbei-logo.png';
@@ -40,6 +41,9 @@ function App() {
           <Route path="/design">
             <Design />
           </Route>
+          <Route path="/loading">
+            <Loading />
+          </Route>          
           <Route path="/">
             <Home />
           </Route>
