@@ -2,7 +2,6 @@ import React from 'react';
 import { 
   render,
   screen,
-  cleanup,
   wait,
 } from '@testing-library/react';
 import {
@@ -15,6 +14,12 @@ import axios from 'axios'
 import Loading from './Loading';
 
 jest.mock('axios');
+
+// this test should be changed and moved to probably the Design page
+// Loading is going to load as a modal
+// and then the function will redirect on its own
+// the redirect won't be part of the modal
+
 
 // we're doing an async test here so we need a bunch of stuff
 // note that the component itself is NOT async, the router is what we're testing

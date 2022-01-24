@@ -1,14 +1,16 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router';
 
-// navigation link with some logic idenitfying active tab
+// the loading "page" is just a modal and doesn't do the redirect itself
+// to find the redirect logic check the button that summons this modal
 
 function Loading(props) {
 
   return (
-    <div>"Loading, please wait"</div>
+    <div>
+      <div className='modal-mask'></div>
+      <div className='loading-modal'>"Loading, please wait"</div>
+    </div>
   )
 }
 
-export default withRouter(Loading);
+export default Loading;
