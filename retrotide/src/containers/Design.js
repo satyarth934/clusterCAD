@@ -15,10 +15,11 @@ class Design extends React.Component {
   }
 
   render() {
-    let showLoading = false;
+    let showLoading = true;
     return (
-      {showLoading ? <Loading /> :
-        <div className='DesignContents'>
+      <div className='DesignHolder'>
+      { showLoading ? <Loading /> :
+         <div className='DesignContents'>
           <h3>Design PKS</h3>
           <div className="inputSelector">
             <Button className={"smilesButton" + (this.state.entryMethod === 'smiles' ? " selected" : "")}
@@ -37,8 +38,8 @@ class Design extends React.Component {
               <MoleculeDiagram />
             }
           </div>
-        </div>
-      }
+        </div> }
+      </div>
     )
   }
 };
