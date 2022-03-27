@@ -1,7 +1,7 @@
 FROM --platform='linux/x86_64' debian:10
 
 # Maintained by Tyler W. H. Backman.
-LABEL maintainer="satyarth@lbl.gov"
+LABEL maintainer="tbackman@lbl.gov"
 
 # Mentioning the current user.
 USER root
