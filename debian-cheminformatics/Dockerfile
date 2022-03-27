@@ -72,14 +72,18 @@ RUN apt-get update \
     libigraph0-dev \
     zlib1g-dev \
     libcairo2-dev \
+    mlocate \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
+
+RUN updatedb
 
 # install pip packages from requirements.txt
 # note: requirements.txt can be updated with 'pip3 install pur; pur -r requirements.txt'
 RUN pip3 install -U pip setuptools
 # RUN pip3 install -r requirements.txt
 RUN pip3 install pur; pur -r requirements.txt
+RUN pip3 install django pandas jupyter
 
 # RDKIT installation: setting environment variables
 ENV RDKIT_VERSION Release_2021_09
@@ -147,3 +151,6 @@ RUN /etc/init.d/postgresql start
 
 
 # TODO: Need to install Django
+RUN wget https://github.com/satyarth934/django-mysite/archive/main.tar.gz && \
+    mv main.tar.gz django-mysite-main.tar.gz && \
+    tar -xvzf django-mysite-main.tar.gz
